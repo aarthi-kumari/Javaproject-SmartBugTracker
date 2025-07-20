@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bug List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Bugs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Priority</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="bug : ${bugs}">
+                <td th:text="${bug.file}">file.java</td>
+                <td th:text="${bug.line}">0</td>
+                <td th:text="${bug.rule}">Rule</td>
+                <td th:text="${bug.priority}">3</td>
+                <td th:text="${bug.message}">Bug message</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
